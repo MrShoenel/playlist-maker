@@ -1,0 +1,23 @@
+{
+  "name": "mrsh_playlist-maker",
+  "version": "1.0.0",
+  "description": "An application that generates playlists from directories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "playlist",
+    "random",
+    "randomize"
+  ],
+  "author": "Sebastian Hönel <development@hoenel.net>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "commander": "^2.19.0",
+    "coveralls": "^3.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  }
+}

@@ -4,7 +4,14 @@
   "description": "An application that generates playlists from directories.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "test_ci": "nyc --reporter=html --reporter=text mocha",
+    "posttest_ci": "npm run coverage",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrShoenel/playlist-maker.git"
   },
   "keywords": [
     "playlist",
@@ -13,6 +20,10 @@
   ],
   "author": "Sebastian Hönel <development@hoenel.net>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrShoenel/playlist-maker/issues"
+  },
+  "homepage": "https://github.com/MrShoenel/playlist-maker#readme",
   "dependencies": {
     "chai": "^4.2.0",
     "commander": "^2.19.0",

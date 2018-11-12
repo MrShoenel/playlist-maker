@@ -25,4 +25,28 @@ describe('CryptoRNG', () => {
 
     done();
   });
+
+
+  it('should generate signed 32-bit integers', done => {
+    let minObserverd = 1, maxObserved = -1;
+
+    for (let i = 0; i < 25000; i++) {
+      const rand = CryptRNG.nextInt32;
+      assert.isAtLeast(rand, -1 * 2**31);
+      assert.isAtMost(rand, 2**31);
+
+      if (rand < minObserverd) {
+        minObserverd = rand;
+      }
+      if (rand > maxObserved) {
+        maxObserved = rand;
+      }
+    }
+
+    // Of course, statistically speaking, sometimes this test will fail.
+    assert.isAtLeast(maxObserved, 2**30);
+    assert.isAtMost(minObserverd, -1 * 2**30);
+
+    done();
+  });
 });

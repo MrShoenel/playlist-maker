@@ -29,6 +29,7 @@
     "commander": "^2.19.0",
     "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "sh.orchestration-tools": "^2.20.0"
   }
 }

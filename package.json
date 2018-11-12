@@ -1,0 +1,35 @@
+{
+  "name": "sh.playlist-maker",
+  "version": "1.1.0",
+  "description": "An application that generates playlists from directories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test_ci": "nyc --reporter=html --reporter=text mocha",
+    "posttest_ci": "npm run coverage",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrShoenel/playlist-maker.git"
+  },
+  "keywords": [
+    "playlist",
+    "random",
+    "randomize"
+  ],
+  "author": "Sebastian Hönel <development@hoenel.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrShoenel/playlist-maker/issues"
+  },
+  "homepage": "https://github.com/MrShoenel/playlist-maker#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "commander": "^2.19.0",
+    "coveralls": "^3.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "sh.orchestration-tools": "^2.20.0"
+  }
+}

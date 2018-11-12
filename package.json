@@ -1,6 +1,6 @@
 {
-  "name": "mrsh_playlist-maker",
-  "version": "1.0.0",
+  "name": "sh.playlist-maker",
+  "version": "1.1.0",
   "description": "An application that generates playlists from directories.",
   "main": "index.js",
   "scripts": {

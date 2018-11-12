@@ -34,7 +34,7 @@ const parseExtensions = val => {
 
 program
   .version(package.version, '-v, --version')
-  .description('The PlaylistMaker is a small application that can create playlists of files within a directory')
+  .description('The PlaylistMaker is a small application that can create playlists of files within a directory.')
   .option('-e, --extensions [extensions]', `Optional. A pipe-separated list of extensions of files to include. Defaults to '${defaultExtensions}'.`, defaultExtensions)
   .option('-f, --files [files]', `Optional. If present, randomizes each folder's files. Defaults to false.`, parseBool, false)
   .option('-d, --dirs [dirs]', `Optional. If present, randomizes all found folders, but not their files. Defaults to false.`, parseBool, false)
@@ -48,13 +48,16 @@ if (program.args.length === 0) {
   process.exit(-1);
 }
 
-const plm = new PlaylistMaker(
-  program.args[0], parseExtensions(program.extensions), !!program.dirs, !!program.files, program.shift, !!program.nonRecursive)
-, timeout = setTimeout(()=>{}, 2**31);
+
+const dirAbsPath = path.isAbsolute(program.args[0]) ? program.args[0] : path.join(process.cwd(), program.args[0])
+, plm = new PlaylistMaker(
+  dirAbsPath, parseExtensions(program.extensions), !!program.dirs, !!program.files, program.shift, !!program.nonRecursive)
+, timeout = setTimeout(()=>{}, 2**30);
 
 
 (async() => {
   try {
+    console.error(`Scanning folder: ${dirAbsPath}`)
     console.log((await plm.makeList()).join(os.EOL));
   } finally {
     clearTimeout(timeout);

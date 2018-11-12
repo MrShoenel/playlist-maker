@@ -1,10 +1,12 @@
 # Playlist Maker
-
 Create playlists from files within directories, even recursively.
 
-[![Coverage Status](https://coveralls.io/repos/github/MrShoenel/playlist-maker/badge.svg?branch=master)](https://coveralls.io/github/MrShoenel/playlist-maker?branch=master)
+|Version|Coverage|Master|
+|:-|:-|:-|
+|[![Current Version](https://img.shields.io/npm/v/sh.playlist-maker.svg)](https://www.npmjs.com/package/sh.playlist-maker)|[![Coverage Status](https://coveralls.io/repos/github/MrShoenel/playlist-maker/badge.svg?branch=master)](https://coveralls.io/github/MrShoenel/playlist-maker?branch=master)|[![Build Status](https://api.travis-ci.org/MrShoenel/orchestration-tools.svg?branch=master)](https://travis-ci.org/MrShoenel/orchestration-tools)|
 
-## Install from npm [![Current Version](https://img.shields.io/npm/v/sh.playlist-maker.svg)](https://www.npmjs.com/package/sh.playlist-maker)
+
+## Install from npm 
 This package can be installed using the following command: `npm install sh.playlist-maker`.
 
 ## Usage (CLI)
